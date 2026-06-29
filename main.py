@@ -19,7 +19,30 @@ def generar_contrasena(longitud, usar_mayusculas, usar_numeros, usar_simbolos):
         contrasena += random.choice(caracteres)
 
     return contrasena
+def evaluar_seguridad(contrasena):
 
+    nivel = 0
+
+    if len(contrasena) >= 8:
+        nivel += 1
+
+    if any(c.isupper() for c in contrasena):
+        nivel += 1
+
+    if any(c.isdigit() for c in contrasena):
+        nivel += 1
+
+    if any(c in string.punctuation for c in contrasena):
+        nivel += 1
+
+    if nivel <= 2:
+        return "BAJA"
+
+    elif nivel == 3:
+        return "MEDIA"
+
+    else:
+        return "ALTA"
 print("===================================")
 print(" GENERADOR SEGURO DE CONTRASEÑAS ")
 print("===================================")
@@ -42,8 +65,11 @@ else:
         usar_mayusculas,
         usar_numeros,
         usar_simbolos
-    )
+    
 
     print("-----------------------------------")
     print("Contraseña generada:", contrasena)
     print("-----------------------------------")
+    nivel = evaluar_seguridad(contrasena)
+
+print("Nivel de seguridad de la contraseña:", nivel)
