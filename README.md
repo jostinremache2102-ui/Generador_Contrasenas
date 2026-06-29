@@ -115,7 +115,7 @@ El desarrollo de este proyecto permitió fortalecer los conocimientos adquiridos
 
 # Video del proyecto
 
-Colocar aquí el enlace del video de Google Drive.
+https://drive.google.com/file/d/1llB3eqHBKvJwxx9GIhhMQoj-xSs38P1N/view?usp=drivesdk
 
 ---
 
